@@ -1,0 +1,37 @@
+{
+    "name": "imt/data-grid-bundle",
+    "description": "This bundle provides integration with IMTDataGrid",
+    "type": "symfony-bundle",
+    "keywords": [
+        "DataGrid",
+        "jQuery",
+        "jqGrid"
+    ],
+    "homepage": "http://github.com/IgorTimoshenko/IMTDataGridBundle",
+    "license": "IMT",
+    "authors": [
+        {
+            "name": "Igor Timoshenko",
+            "email": "igor.timoshenko@i.ua",
+            "homepage": "http://igortimoshenko.com"
+        }
+    ],
+    "support": {
+        "email": "igor.timoshenko@i.ua",
+        "issues": "http://github.com/IgorTimoshenko/IMTDataGridBundle/issues",
+        "wiki": "http://github.com/IgorTimoshenko/IMTDataGridBundle/wiki",
+        "source": "http://github.com/IgorTimoshenko/IMTDataGridBundle"
+    },
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0,<2.3-dev",
+        "imt/data-grid": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "IMT\\DataGridBundle": ""
+        }
+    },
+    "target-dir": "IMT/DataGridBundle",
+    "minimum-stability": "dev"
+}
