@@ -60,7 +60,7 @@ class GridCompilerPassTest extends \PHPUnit_Framework_TestCase
      */
     private function getContainerBuilderMock(
         Definition $definition,
-        $hasDefinition = false
+        $hasDefinition
     ) {
         $containerBuilder = $this
             ->getMock('Symfony\Component\DependencyInjection\ContainerBuilder');
