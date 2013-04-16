@@ -9,7 +9,6 @@ services:
   imt_data_grid.factory:
     class: %imt_data_grid.factory.class%
     arguments:
-      - @imt_data_grid.request
       - @imt_data_grid.registry
       - @templating
 
