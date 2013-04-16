@@ -8,7 +8,7 @@
         "jqGrid"
     ],
     "homepage": "http://github.com/IgorTimoshenko/IMTDataGridBundle",
-    "license": "IMT",
+    "license": "MIT",
     "authors": [
         {
             "name": "Igor Timoshenko",
