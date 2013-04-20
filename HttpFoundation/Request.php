@@ -54,7 +54,7 @@ class Request implements RequestInterface
      */
     public function getLimit()
     {
-        return $this->symfonyRequest->get('limit', 0);
+        return $this->symfonyRequest->get('rows', 0);
     }
 
     /**
