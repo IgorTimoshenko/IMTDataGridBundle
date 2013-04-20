@@ -92,7 +92,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     {
         $limit = 123;
 
-        $this->symfonyRequest->request->set('limit', $limit);
+        $this->symfonyRequest->request->set('rows', $limit);
 
         $this->assertEquals($limit, $this->request->getLimit());
     }
