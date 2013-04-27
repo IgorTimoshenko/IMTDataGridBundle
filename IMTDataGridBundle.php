@@ -14,7 +14,7 @@ namespace IMT\DataGridBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-use IMT\DataGridBundle\DependencyInjection\Compiler\GridCompilerPass;
+use IMT\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass;
 
 /**
  * This class adds a few conventions for DependencyInjection extensions and
@@ -31,6 +31,6 @@ class IMTDataGridBundle extends Bundle
     {
         parent::build($container);
 
-        $container->addCompilerPass(new GridCompilerPass());
+        $container->addCompilerPass(new DataGridCompilerPass());
     }
 }
