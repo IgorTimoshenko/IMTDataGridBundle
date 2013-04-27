@@ -16,11 +16,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
- * This processes the tagged services with the name `imt_data_grid.grid`
+ * This processes the tagged services with the name `imt_data_grid.data_grid`
  *
  * @author Igor Timoshenko <igor.timoshenko@i.ua>
  */
-class GridCompilerPass implements CompilerPassInterface
+class DataGridCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritDoc}
@@ -31,7 +31,9 @@ class GridCompilerPass implements CompilerPassInterface
             return;
         }
 
-        $taggedServices = $container->findTaggedServiceIds('imt_data_grid.grid');
+        $taggedServices = $container
+            ->findTaggedServiceIds('imt_data_grid.data_grid');
+
         $definition     = $container->getDefinition('imt_data_grid.registry');
 
         foreach ($taggedServices as $id => $tagAttributes) {

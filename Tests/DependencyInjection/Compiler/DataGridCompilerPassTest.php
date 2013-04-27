@@ -13,15 +13,15 @@ namespace IMT\DataGridBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Definition;
 
-use IMT\DataGridBundle\DependencyInjection\Compiler\GridCompilerPass;
+use IMT\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass;
 
 /**
  * @author Igor Timoshenko <igor.timoshenko@i.ua>
  */
-class GridCompilerPassTest extends \PHPUnit_Framework_TestCase
+class DataGridCompilerPassTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers IMT\DataGridBundle\DependencyInjection\Compiler\GridCompilerPass::process
+     * @covers IMT\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass::process
      */
     public function testProcessWithNonExistingDefinition()
     {
@@ -29,14 +29,14 @@ class GridCompilerPassTest extends \PHPUnit_Framework_TestCase
 
         $containerBuilder = $this->getContainerBuilderMock($definition, false);
 
-        $gridCompilerPass = new GridCompilerPass();
+        $gridCompilerPass = new DataGridCompilerPass();
         $gridCompilerPass->process($containerBuilder);
 
         $this->assertCount(0, $definition->getMethodCalls());
     }
 
     /**
-     * @covers IMT\DataGridBundle\DependencyInjection\Compiler\GridCompilerPass::process
+     * @covers IMT\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass::process
      */
     public function testProcess()
     {
@@ -44,7 +44,7 @@ class GridCompilerPassTest extends \PHPUnit_Framework_TestCase
 
         $containerBuilder = $this->getContainerBuilderMock($definition, true);
 
-        $gridCompilerPass = new GridCompilerPass();
+        $gridCompilerPass = new DataGridCompilerPass();
         $gridCompilerPass->process($containerBuilder);
 
         $methodCalls = $definition->getMethodCalls();
@@ -70,12 +70,14 @@ class GridCompilerPassTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('imt_data_grid.registry'))
             ->will($this->returnValue($hasDefinition));
 
-        $taggedServiceIds = array('grid' => array(array('alias' => 'grid')));
+        $taggedServiceIds = array(
+            'data_grid' => array(array('alias' => 'data_grid')),
+        );
 
         $containerBuilder
             ->expects($this->any())
             ->method('findTaggedServiceIds')
-            ->with($this->equalTo('imt_data_grid.grid'))
+            ->with($this->equalTo('imt_data_grid.data_grid'))
             ->will($this->returnValue($taggedServiceIds));
         $containerBuilder
             ->expects($this->any())

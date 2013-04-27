@@ -3,8 +3,6 @@ parameters:
 
   imt_data_grid.registry.class: IMT\DataGrid\Registry\Registry
 
-  imt_data_grid.request.class: IMT\DataGridBundle\HttpFoundation\Request
-
 services:
   imt_data_grid.factory:
     class: %imt_data_grid.factory.class%
@@ -15,10 +13,3 @@ services:
   imt_data_grid.registry:
     class: %imt_data_grid.registry.class%
     public: false
-
-  imt_data_grid.request:
-    class: %imt_data_grid.request.class%
-    public: false
-    scope: request
-    arguments:
-      - @request

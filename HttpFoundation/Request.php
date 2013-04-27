@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use IMT\DataGrid\HttpFoundation\RequestInterface;
 
 /**
- * This class represents the grid request
+ * This class represents the data grid request
  *
  * @author Igor Timoshenko <igor.timoshenko@i.ua>
  */
