@@ -218,12 +218,12 @@ the client-side:
 {% endblock %}
 ```
 
-Because we specified during the constructing of the object that reflects the
-grid the `url` option, after rendering the grid on the client-side will be made
+Because we specified the `url` option during the construction of the object that
+reflects the grid, after rendering the grid on the client-side will be made
 an additional request to the server to retrieve data. You need to pass the data
 source into the object that reflects the grid and also bind with it the request
 that came to the server. All that is left to do is to get data from the data
-source and return them in the required data format.
+source and return them in the required data format:
 
 ```php
 <?php
@@ -231,7 +231,7 @@ namespace Acme\PostBundle\Controller;
 
 // ...
 use IMT\DataGrid\DataSource\Doctrine\ORM\DataSource;
-use IMT\DataGridBundle\HttpFoundation\Request;
+use IMT\DataGrid\HttpFoundation\JqGridRequest;
 // ...
 // in the `getPostsAction` method before getting the grid view
 if ($this->getRequest()->isXmlHttpRequest()) {
@@ -248,7 +248,7 @@ if ($this->getRequest()->isXmlHttpRequest()) {
 
     $grid
         ->setDataSource(new DataSource($queryBuilder))
-        ->bindRequest(new Request($this->getRequest()));
+        ->bindRequest(new JqGridRequest($this->getRequest()));
 
     return new Response(
         json_encode($grid->getData()),
@@ -262,7 +262,7 @@ if ($this->getRequest()->isXmlHttpRequest()) {
 
 As a result, you should see on the client-side the grid with information about
 the posts. As you can see, to create the grid that is bound with data on the
-server and with the ability to search very easy.
+server and with the ability to search is very easy.
 
 ## License ##
 
