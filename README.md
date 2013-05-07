@@ -152,13 +152,10 @@ class PostController extends Controller
 }
 ```
 
-An object of the column in the constructor method takes three required options
-and one optional. However, you can pass more options, if necessary. For
-instance, if needed pass them to the library on the client-side. The following
-options are required: **index**, **label**, **name**. An optional option is
-**template**, with this option you can bind the column with a template. In the
-specified template will be passed an object of the column and an array with data
-of the current row.
+An object of the column in the constructor method takes an array of options.
+There are four options: `index`, `label`, `name`, `template`. The first three
+are required. You can also pass more options, if necessary. For instance, if
+needed pass them to the library on the client-side.
 
 Once the construction of the object that reflects the grid is finished, you need
 to call the `createView` method which will create an object of the grid view.
@@ -199,15 +196,16 @@ the client-side:
     {% endjavascripts %}
 
     <script>
-        {% set options = grid.getOptions %}
-
         {% set colModel = [] %}
-        {% for column in grid.getColModel %}
+        {% set colNames = [] %}
+        {% for column in grid.getColumns %}
             {% set colModel = colModel|merge([column.toArray]) %}
+            {% set colNames = colNames|merge([column.get('label')]) %}
         {% endfor %}
 
+        {% set options = grid.getOptions %}
         {% set options = options|merge({'colModel':colModel}) %}
-        {% set options = options|merge({'colNames':grid.getColNames}) %}
+        {% set options = options|merge({'colNames':colNames}) %}
 
         $(function(){
             $('#' + '{{ grid.getName }}').jqGrid({{ options|json_encode|raw }});
