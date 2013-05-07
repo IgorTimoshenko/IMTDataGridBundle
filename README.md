@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/IgorTimoshenko/IMTDataGridBundle.png?branch=master)](https://travis-ci.org/IgorTimoshenko/IMTDataGridBundle)
+[![Coverage Status](https://coveralls.io/repos/IgorTimoshenko/IMTDataGridBundle/badge.png?branch=master)](https://coveralls.io/r/IgorTimoshenko/IMTDataGridBundle)
 
 # IMTDataGridBundle #
 

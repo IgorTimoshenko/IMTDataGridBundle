@@ -15,7 +15,9 @@ before_script:
   - composer install
   - composer require symfony/framework-bundle:${SYMFONY_VERSION}
 
-script: phpunit --coverage-text
+script: phpunit
+
+after_script: php vendor/bin/coveralls
 
 notifications:
   email:

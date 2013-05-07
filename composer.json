@@ -27,6 +27,9 @@
         "symfony/framework-bundle": ">=2.0.9,<2.3-dev",
         "imt/data-grid": "dev-master"
     },
+    "require-dev": {
+        "satooshi/php-coveralls": "v0.6.1"
+    },
     "autoload": {
         "psr-0": {
             "IMT\\DataGridBundle": ""
