@@ -1,15 +1,9 @@
 parameters:
-  imt_data_grid.factory.class: IMT\DataGrid\Factory\Factory
-
-  imt_data_grid.registry.class: IMT\DataGrid\Registry\Registry
+  imt_data_grid.manager.class: IMT\DataGrid\Manager\Manager
 
 services:
-  imt_data_grid.factory:
-    class: %imt_data_grid.factory.class%
+  imt_data_grid.manager:
+    class: %imt_data_grid.manager.class%
     arguments:
-      - @imt_data_grid.registry
+      - @event_dispatcher
       - @templating
-
-  imt_data_grid.registry:
-    class: %imt_data_grid.registry.class%
-    public: false
