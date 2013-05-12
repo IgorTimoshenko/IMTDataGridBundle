@@ -53,7 +53,7 @@ $bundles = array(
 
 The bundle provides a new `imt_data_grid.manager` service that returns an
 instance of `IMT\DataGrid\Manager\ManagerInterface`. So the only thing to do is
-to request the the `imt_data_grid.manager` service from the container to get an
+to request the `imt_data_grid.manager` service from the container to get an
 instance of `IMT\DataGrid\Manager\ManagerInterface` and start using the
 [IMTDataGrid][1] library:
 
