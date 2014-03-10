@@ -32,11 +32,10 @@
         "squizlabs/php_codesniffer": "1.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "IMT\\DataGridBundle": ""
         }
     },
-    "target-dir": "IMT/DataGridBundle",
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
