@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "IMT\\DataGridBundle": ""
+            "IMT\\DataGridBundle\\": ""
         }
     },
     "minimum-stability": "dev",
