@@ -1,13 +1,13 @@
-[![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/9434281)](http://depending.in/IgorTimoshenko/IMTDataGridBundle)
+[![Dependencies Status](https://depending.in/IgorTimoshenko/IMTDataGridBundle.png)](http://depending.in/IgorTimoshenko/IMTDataGridBundle)
 
 # IMTDataGridBundle #
 
 ## Overview ##
 
 This bundle provides a simple integration of the [IMTDataGrid][1] library into
-Symfony2. [IMTDataGrid][1] is a library that provides a simple, powerful and
-fully customizable tool for generating data-bound grids. This means that you can
-use such libraries as [jqGrid][2] in your Symfony2 application.
+Symfony2. IMTDataGrid is a library that provides a simple, powerful and fully
+customizable tool for generating data-bound grids. This means that you can use
+such libraries as [jqGrid][2] in your Symfony2 application.
 
 ## Installation ##
 
@@ -28,15 +28,15 @@ your `composer.json` file:
 }
 ```
 
-Then, you can install the new dependencies by running [Composer][3]'s update
-command from the directory where your `composer.json` file is located:
+Then, you can install the new dependencies by running Composer's update command
+from the directory where your `composer.json` file is located:
 
 ```sh
 $ php composer.phar update imt/data-grid-bundle
 ```
 
-Now, [Composer][3] will automatically download all required files, and install
-them for you. All that is left to do is to update your `AppKernel.php` file, and
+Now, Composer will automatically download all required files, and install them
+for you. All that is left to do is to update your `AppKernel.php` file, and
 register the new bundle:
 
 ```php
@@ -55,7 +55,7 @@ The bundle provides a new `imt_data_grid.manager` service that returns an
 instance of `IMT\DataGrid\Manager\ManagerInterface`. So the only thing to do is
 to request the `imt_data_grid.manager` service from the container to get an
 instance of `IMT\DataGrid\Manager\ManagerInterface` and start using the
-[IMTDataGrid][1] library:
+IMTDataGrid library:
 
 ```php
 <?php
@@ -63,6 +63,21 @@ instance of `IMT\DataGrid\Manager\ManagerInterface` and start using the
 $dataGridManager = $container->get('imt_data_grid.manager');
 // ...
 ```
+
+## Testing ##
+
+```sh
+$ make test
+```
+
+## Contributing ##
+
+Please see [CONTRIBUTING][4] for details.
+
+## Credits
+
+- [Igor Timoshenko][5]
+- [All Contributors][6]
 
 ## License ##
 
@@ -74,3 +89,6 @@ bundle:
 [1]: http://github.com/IgorTimoshenko/IMTDataGrid
 [2]: http://github.com/tonytomov/jqGrid
 [3]: http://getcomposer.org
+[4]: https://github.com/IgorTimoshenko/IMTDataGridBundle/blob/master/CONTRIBUTING.md
+[5]: https://github.com/IgorTimoshenko
+[6]: https://github.com/IgorTimoshenko/IMTDataGridBundle/graphs/contributor
