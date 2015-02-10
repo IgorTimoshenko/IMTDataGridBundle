@@ -18,13 +18,9 @@ your `composer.json` file:
 
 ```json
 {
-    // ...
     "require": {
-        // ...
         "imt/data-grid-bundle": "0.9.*"
-        // ...
     }
-    // ...
 }
 ```
 
